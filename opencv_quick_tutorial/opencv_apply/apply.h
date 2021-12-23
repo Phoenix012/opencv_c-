@@ -8,4 +8,5 @@ class OpencvHelper
 {
 public:
 	int add(int x, int y);
+	void load_image_demo(Mat& image);
 };
