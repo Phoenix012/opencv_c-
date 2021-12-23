@@ -43,3 +43,20 @@ void OpencvHelper::mask_demo(Mat& image)
 	filter2D(src2, dst2, src2.depth(), kernal);
 	imshow("filter2D mask", dst2);
 }
+
+void OpencvHelper::blend_demo()
+{
+	Mat src1 = imread("C:/images/hist_01.jpg");
+	Mat src2 = imread("C:/images/hist_02.jpg");
+	Mat dst;
+	if (src1.size() != src2.size() || src1.type() != src2.type())
+	{
+		cout << "could not apply addWeight";
+	}
+	else
+	{
+		double alpha = 0.5;
+		addWeighted(src1, alpha, src2, 1 - alpha, 0, dst);
+		imshow("add weight demo", dst);
+	}
+}

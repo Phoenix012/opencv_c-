@@ -12,7 +12,7 @@ int main(int argc, void** argv)
 		cout << "could not load image.." << endl;
 		return -1;
 	}
-	oh.mask_demo(src);
+	oh.blend_demo();
 
 	waitKey(0);
 	destroyAllWindows();
