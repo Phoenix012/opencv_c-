@@ -10,4 +10,6 @@ void OpencvHelper::load_image_demo(Mat& image)
 	Mat dst;
 	cvtColor(image, dst, COLOR_BGR2HSV);
 	imshow("HSV", dst);
+
+	imwrite("C:/images/hsv.tif", dst);
 }
