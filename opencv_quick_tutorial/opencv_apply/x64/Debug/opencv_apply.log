@@ -1,0 +1,3 @@
+﻿  main.cpp
+c:\users\h149042\documents\github\opencv_cpp\opencv_quick_tutorial\opencv_apply\main.cpp(4): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  opencv_apply.vcxproj -> C:\Users\H149042\Documents\GitHub\opencv_cpp\opencv_quick_tutorial\x64\Debug\opencv_apply.exe
