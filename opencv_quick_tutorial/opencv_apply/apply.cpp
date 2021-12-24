@@ -69,7 +69,7 @@ void OpencvHelper::light_contrast_demo(Mat& image)
 	Mat dst = Mat::zeros(image.size(), image.type());
 
 	//y=alpha*x+gemma
-	double alpha = 1.5;	//对比度
+	double alpha = 0.8;	//对比度
 	double beta = 10;	//亮度
 	int channel = image.channels();
 
