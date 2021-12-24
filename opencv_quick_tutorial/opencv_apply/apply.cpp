@@ -100,3 +100,50 @@ void OpencvHelper::light_contrast_demo(Mat& image)
 	}
 	imshow("light and contrast demo", dst);
 }
+
+void OpencvHelper::draw_demo(Mat& image)
+{
+	int w = image.cols;
+	int h = image.rows;
+	Mat dst = image.clone();
+
+	line(dst, Point(0, 0), Point(w, h), Scalar(0, 0, 255), 2, LINE_AA);
+
+	rectangle(dst, Rect(w / 4, h / 4, w / 2, h / 2), Scalar(0, 0, 100), 2, LINE_AA);
+
+	circle(dst, Point(w / 2, h / 2), w / 4, Scalar(0, 100, 100), 2, LINE_AA);
+
+	ellipse(dst, Point(w / 2, h / 2), Size(w / 2, w / 4), 45, 0, 180, Scalar(200, 0, 0), 2, LINE_AA);
+
+	Point pts[1][5];
+	pts[0][0] = Point(100, 100);
+	pts[0][1] = Point(100, 200);
+	pts[0][2] = Point(200, 300);
+	pts[0][3] = Point(200, 100);
+	pts[0][4] = Point(100, 80);
+	const Point* ppts[] = { pts[0] };
+	int npt[] = { 5 };
+
+	fillPoly(dst, ppts, npt, 1, Scalar(255, 12, 200), LINE_8);
+
+
+	putText(dst, String("Hello OpenCV"), Point(100, 100), FONT_HERSHEY_COMPLEX, 1.2, Scalar(100, 100, 255));
+
+	RNG rng(12345);
+	Point p1, p2;
+	while (true)
+	{
+		p1.x = rng.uniform(0, w);
+		p1.y = rng.uniform(0, h);
+		p2.x = rng.uniform(0, w);
+		p2.y = rng.uniform(0, h);
+		Scalar color(rng.uniform(0, 255), rng.uniform(0, 255), rng.uniform(0, 255));
+		char key = waitKey(100);
+		if (key == 27)
+		{
+			break;
+		}
+		line(dst, p1, p2, color, 2, LINE_AA);
+		imshow("draw demo", dst);
+	}
+}

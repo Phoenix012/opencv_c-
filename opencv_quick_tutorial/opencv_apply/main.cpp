@@ -12,7 +12,7 @@ int main(int argc, void** argv)
 		cout << "could not load image.." << endl;
 		return -1;
 	}
-	oh.light_contrast_demo(src);
+	oh.draw_demo(src);
 
 	waitKey(0);
 	destroyAllWindows();
