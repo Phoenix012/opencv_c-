@@ -2,7 +2,7 @@
 
 int main(int argc, void** argv)
 {
-	const char* image = "C:/images/flower.png";
+	const char* image = "C:/images/test.png";
 	OpencvHelper oh;
 	Mat src;
 	src = imread(image);
@@ -12,7 +12,7 @@ int main(int argc, void** argv)
 		cout << "could not load image.." << endl;
 		return -1;
 	}
-	oh.blend_demo();
+	oh.light_contrast_demo(src);
 
 	waitKey(0);
 	destroyAllWindows();
